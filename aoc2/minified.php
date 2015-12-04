@@ -1,0 +1,1 @@
+<?php $x=file('i');$p=$r=0;foreach($x as$g){$g=explode('x',$g);sort($g,1);$z=$g[0]*$g[1];$p+=2*$g[2]*($g[0]+$g[1])+3*$z;$r+=($g[0]+$g[1])*2+$z*$g[2];}echo"$p,$r";
