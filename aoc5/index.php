@@ -60,7 +60,7 @@ foreach($file as $key => $string) {
             $pairs[$str[$index-1] . $char] = 1;
         }
 
-        if($index >= 2 && $char == $str[$index-2] && $char != $str[$index-1]) {
+        if($index >= 2 && $char == $str[$index-2]) {
             $has_two = true;
         }
     }
