@@ -51,14 +51,19 @@ foreach($file as $key => $string) {
     $str = str_split($string);
     $has_two = false;
     $pairs = [];
+    $last_pair = "";
     foreach($str as $index => $char) {
         if($index == 0) continue;
 //        echo $str[$index-1] . $char . ", ";
-        if(isset($pairs[$str[$index-1] . $char])) {
-            $pairs[$str[$index-1] . $char]++;
-        } else {
-            $pairs[$str[$index-1] . $char] = 1;
+        if($str[$index-1] . $char != $last_pair) {
+            if(isset($pairs[$str[$index-1] . $char])) {
+                $pairs[$str[$index-1] . $char]++;
+            } else {
+                $pairs[$str[$index-1] . $char] = 1;
+            }
         }
+
+        $last_pair =$str[$index-1] . $char;
 
         if($index >= 2 && $char == $str[$index-2]) {
             $has_two = true;
